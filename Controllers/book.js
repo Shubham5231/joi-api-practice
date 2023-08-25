@@ -39,10 +39,12 @@ module.exports = class BookController {
       res.send('error');
     }
   }
-  async UpdateBookById(req, res, next) {
+  async UpdateBook(req, res, next) {
     const id = req.query.id;
     const book = req.body;
-    const result = await bookService.UpdateBookById(id, book);
+
+    const result = await bookService.UpdateBook(id, book);
+
     if (result) {
       res.send(result);
     } else {

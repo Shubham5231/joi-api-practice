@@ -14,7 +14,7 @@ module.exports = class BookService {
   async DeleteBookById(id) {
     return await BookModel.findByIdAndDelete(id);
   }
-  async UpdateBookById(id, UpdatedBook) {
-    return await BookModel.findByIdAndUpdate(id, UpdatedBook);
+  async UpdateBook(id, updatedBook) {
+    return await BookModel.findByIdAndUpdate(id, updatedBook, { new: true });
   }
 };
